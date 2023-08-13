@@ -52,7 +52,7 @@ public class Writer {
     }
 
     public Writer(String firstName, String lastName, List<Post> postList) {
-        this.id = count.getAndIncrement();
+        this.id = count.incrementAndGet();
         this.firstName = firstName;
         this.lastName = lastName;
         this.postList = postList;

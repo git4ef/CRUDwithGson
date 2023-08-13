@@ -1,1 +1,16 @@
-[{"id":1,"content":"sdf","created":"Aug 14, 2023, 2:15:42 AM","labelList":[{"id":0,"name":"DFG","status":"ACTIVE"}],"status":"DELETED"},{"id":2,"content":"sdfsfd","created":"Aug 14, 2023, 2:15:42 AM","labelList":[{"id":0,"name":"DFG","status":"ACTIVE"}],"status":"ACTIVE"},{"id":3,"content":"sdffdh","created":"Aug 14, 2023, 2:15:42 AM","labelList":[{"id":0,"name":"DFG","status":"ACTIVE"}],"status":"ACTIVE"}]
+[
+  {
+    "id": 1,
+    "content": "some content",
+    "created": "Aug 14, 2023, 3:30:05 AM",
+    "updated": null,
+    "labelList": [
+      {
+        "id": 1,
+        "name": "ART",
+        "status": "ACTIVE"
+      }
+    ],
+    "status": "ACTIVE"
+  }
+]

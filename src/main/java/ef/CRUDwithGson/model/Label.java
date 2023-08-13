@@ -34,7 +34,7 @@ public class Label {
     }
 
     public Label(String name) {
-        this.id = count.getAndIncrement();
+        this.id = count.incrementAndGet();
         this.name = name;
         this.status = PostStatus.ACTIVE;
     }
