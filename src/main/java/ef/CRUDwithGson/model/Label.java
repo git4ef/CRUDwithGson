@@ -1,8 +1,12 @@
 package ef.CRUDwithGson.model;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Label {
     private int id;
+    private static final AtomicInteger count = new AtomicInteger(0);
     private String name;
+    private PostStatus status;
 
     public int getId() {
         return id;
@@ -20,9 +24,19 @@ public class Label {
         this.name = name;
     }
 
-    public Label(int id, String name) {
-        this.id = id;
+    public PostStatus getStatus() {
+        return status;
+    }
+
+    public PostStatus setStatus(PostStatus status) {
+        this.status = status;
+        return status;
+    }
+
+    public Label(String name) {
+        this.id = count.getAndIncrement();
         this.name = name;
+        this.status = PostStatus.ACTIVE;
     }
 
     @Override
@@ -30,6 +44,7 @@ public class Label {
         return "Label{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", status=" + status +
                 '}';
     }
 }

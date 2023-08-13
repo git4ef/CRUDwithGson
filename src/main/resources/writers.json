@@ -1,0 +1,52 @@
+[
+  {
+    "id": 0,
+    "firstName": "sfd",
+    "lastName": "dfg",
+    "postList": [
+      {
+        "id": 1,
+        "content": "sdf",
+        "created": "Aug 14, 2023, 2:15:42 AM",
+        "updated": null,
+        "labelList": [
+          {
+            "id": 0,
+            "name": "DFG",
+            "status": "ACTIVE"
+          }
+        ],
+        "status": "DELETED"
+      },
+      {
+        "id": 2,
+        "content": "sdfsfd",
+        "created": "Aug 14, 2023, 2:15:42 AM",
+        "updated": null,
+        "labelList": [
+          {
+            "id": 0,
+            "name": "DFG",
+            "status": "ACTIVE"
+          }
+        ],
+        "status": "ACTIVE"
+      },
+      {
+        "id": 3,
+        "content": "sdffdh",
+        "created": "Aug 14, 2023, 2:15:42 AM",
+        "updated": null,
+        "labelList": [
+          {
+            "id": 0,
+            "name": "DFG",
+            "status": "ACTIVE"
+          }
+        ],
+        "status": "ACTIVE"
+      }
+    ],
+    "status": "ACTIVE"
+  }
+]
