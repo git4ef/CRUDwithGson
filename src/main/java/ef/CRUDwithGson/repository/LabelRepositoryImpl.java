@@ -1,59 +1,60 @@
 package ef.CRUDwithGson.repository;
 
 import ef.CRUDwithGson.model.Label;
-import ef.CRUDwithGson.model.PostStatus;
+import ef.CRUDwithGson.model.Status;
 import ef.CRUDwithGson.util.LabelGsonUtil;
-
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class LabelRepositoryImpl implements LabelRepository {
     LabelGsonUtil labelGsonUtil = new LabelGsonUtil();
 
     @Override
-    public Label save(Label label) {
+    public Label save(Label label) throws IOException {
         List<Label> labelList = new ArrayList<>();
-        labelList = labelGsonUtil.deserializingToObjects();
-        Label label1 = label;
-        labelList.add(label1);
+        try {
+            labelList = labelGsonUtil.deserializingToObjects();
+        } catch (FileNotFoundException e) {
+            System.out.println("first record, label.json file created..");
+            labelGsonUtil.serializingToJson(labelList);
+        }
+        label.setId(labelGsonUtil.getIdForObject(labelList.size()));
+        labelList.add(label);
         labelGsonUtil.serializingToJson(labelList);
         return label;
     }
 
-
     @Override
-    public Label getById(Integer id) {
-        try {
-            return labelGsonUtil.deserializingToObjects().stream().filter(s -> s.getId() == id).findFirst().orElse(null);
-        } catch (NullPointerException e) {
-            System.out.println(e.getMessage());
-        }
-        return null;
+    public Label getById(Integer id) throws IOException {
+        return labelGsonUtil.deserializingToObjects().stream().filter(s -> s.getId() == id).findFirst().orElse(null);
     }
 
     @Override
-    public Label update(Label label) {
+    public Label update(Label label) throws IOException {
         List<Label> labelList;
         labelList = labelGsonUtil.deserializingToObjects();
-        labelList.get(label.getId()).setName(label.getName());
+        labelList.stream().filter(c -> c.getId() == label.getId()).findFirst().orElse(null).setName(label.getName());
         labelGsonUtil.serializingToJson(labelList);
         return label;
     }
 
     @Override
-    public void deleteById(Integer id) {
+    public void deleteById(Integer id) throws IOException {
         List<Label> labelList = null;
         labelList = labelGsonUtil.deserializingToObjects();
-        labelList.stream().filter(c -> c.getId() == id).findFirst().orElse(null).setStatus(PostStatus.DELETED);
+        labelList.stream().filter(c -> c.getId() == id).findFirst().orElse(null).setStatus(Status.DELETED);
         labelGsonUtil.serializingToJson(labelList);
     }
 
     @Override
-    public List<Label> getAll() {
+    public List<Label> getAll() throws IOException {
         return labelGsonUtil.deserializingToObjects();
     }
 
-    public Label findLabelByName(String name) {
+    public Label findLabelByName(String name) throws IOException {
         return labelGsonUtil.deserializingToObjects().stream().filter(s -> s.getName().equals(name)).findFirst().orElse(null);
     }
 

@@ -1,15 +1,13 @@
 package ef.CRUDwithGson.model;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Writer {
     private int id;
-    private static final AtomicInteger count = new AtomicInteger(0);
     private String firstName;
     private String lastName;
     private List<Post> postList;
-    private PostStatus status;
+    private Status status;
 
     public int getId() {
         return id;
@@ -43,30 +41,35 @@ public class Writer {
         this.postList = postList;
     }
 
-    public PostStatus getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(PostStatus status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 
     public Writer(String firstName, String lastName, List<Post> postList) {
-        this.id = count.incrementAndGet();
         this.firstName = firstName;
         this.lastName = lastName;
         this.postList = postList;
-        this.status = PostStatus.ACTIVE;
+        this.status = Status.NOT_DELETED;
+    }
+
+    public Writer(int id, String firstName, String lastName) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     @Override
     public String toString() {
-        return "Writer{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", postList=" + postList +
-                ", status=" + status +
-                '}';
+        return ("\n* ********************************************************" +
+                "\n*                          Writer" +
+                "\n*                     ID: " + id +
+                "\n*                     FIRSTNAME: " + firstName +
+                "\n*                     LASTNAME: " + lastName +
+                "\n*                     STATUS: " + status + ".") +
+                "\n*                     " + postList;
     }
 }

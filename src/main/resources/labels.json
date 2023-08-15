@@ -1,7 +1,17 @@
 [
   {
     "id": 1,
-    "name": "ART",
-    "status": "ACTIVE"
+    "name": "horror",
+    "status": "NOT_DELETED"
+  },
+  {
+    "id": 2,
+    "name": "comedy",
+    "status": "NOT_DELETED"
+  },
+  {
+    "id": 3,
+    "name": "action",
+    "status": "NOT_DELETED"
   }
 ]

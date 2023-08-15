@@ -2,24 +2,29 @@ package ef.CRUDwithGson.model;
 
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Post {
     private int id;
-    private static final AtomicInteger count = new AtomicInteger(0);
     private String content;
     private Date created;
     private Date updated;
     private List<Label> labelList;
-    private PostStatus status;
+    private PostStatus postStatus;
 
-    public Post(String content, List <Label> labelList) {
-        this.id = count.incrementAndGet();
+
+    public Post(String content, List<Label> labelList) {
         this.content = content;
         this.created = new Date();
         this.updated = updated;
         this.labelList = labelList;
-        this.status = PostStatus.ACTIVE;
+        this.postStatus = PostStatus.ACTIVE;
+    }
+
+    public Post(int id, String content, List<Label> labelList) {
+        this.id = id;
+        this.content = content;
+        this.labelList = labelList;
+        this.postStatus = PostStatus.ACTIVE;
     }
 
     public int getId() {
@@ -63,23 +68,25 @@ public class Post {
     }
 
     public PostStatus getStatus() {
-        return status;
+        return postStatus;
     }
 
-    public void setStatus(PostStatus status) {
-        this.status = status;
+    public void setStatus(PostStatus postStatus) {
+        this.postStatus = postStatus;
     }
 
 
     @Override
     public String toString() {
-        return "Post{" +
-                "id=" + id +
-                ", content='" + content + '\'' +
-                ", created=" + created +
-                ", updated=" + updated +
-                ", labelList=" + labelList +
-                ", status=" + status +
-                '}';
+        return "\n* ********************************************************" +
+                "\n*  Post id: " + id +
+                "\n* ********************************************************" +
+                "\n*   content: " + content +
+                "\n*   created: " + created +
+                "\n*   updated: " + updated +
+                "\n*   status: " + postStatus +
+                "\n*   labels: " + labelList +
+                "\n* ********************************************************";
+
     }
 }

@@ -1,16 +1,16 @@
 [
   {
     "id": 1,
-    "content": "some content",
-    "created": "Aug 14, 2023, 3:30:05 AM",
-    "updated": null,
+    "content": "some",
+    "created": "Aug 15, 2023, 8:48:28 PM",
+    "updated": "Aug 15, 2023, 8:58:35 PM",
     "labelList": [
       {
-        "id": 1,
-        "name": "ART",
-        "status": "ACTIVE"
+        "id": 3,
+        "name": "action",
+        "status": "NOT_DELETED"
       }
     ],
-    "status": "ACTIVE"
+    "postStatus": "ACTIVE"
   }
 ]

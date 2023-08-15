@@ -6,19 +6,29 @@
     "postList": [
       {
         "id": 1,
-        "content": "some content",
-        "created": "Aug 14, 2023, 3:30:05 AM",
+        "content": "some movie",
+        "created": "Aug 15, 2023, 8:48:28 PM",
         "updated": null,
         "labelList": [
           {
             "id": 1,
-            "name": "ART",
-            "status": "ACTIVE"
+            "name": "horror",
+            "status": "NOT_DELETED"
+          },
+          {
+            "id": 2,
+            "name": "comedy",
+            "status": "NOT_DELETED"
+          },
+          {
+            "id": 3,
+            "name": "action",
+            "status": "NOT_DELETED"
           }
         ],
-        "status": "ACTIVE"
+        "postStatus": "ACTIVE"
       }
     ],
-    "status": "ACTIVE"
+    "status": "NOT_DELETED"
   }
 ]
