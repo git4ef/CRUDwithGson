@@ -3,14 +3,14 @@ package ef.CRUDwithGson.model;
 import java.util.List;
 
 public class Writer {
-    private int id;
+    private Integer id;
     private String firstName;
     private String lastName;
     private List<Post> postList;
     private Status status;
 
     public int getId() {
-        return id;
+        return id = this.id;
     }
 
     public void setId(int id) {

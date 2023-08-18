@@ -1,40 +1,39 @@
 package ef.CRUDwithGson.controller;
 
 import ef.CRUDwithGson.model.Label;
-import ef.CRUDwithGson.repository.LabelRepositoryImpl;
-import java.io.IOException;
+import ef.CRUDwithGson.repository.LabelRepository;
+import ef.CRUDwithGson.repository.gson.LabelRepositoryImpl;
 import java.util.ArrayList;
 import java.util.List;
 
 public class LabelController {
-    LabelRepositoryImpl labelRepository = new LabelRepositoryImpl();
+    private LabelRepository labelRepository = new LabelRepositoryImpl();
 
-    public Label saveLabel(String name) throws IOException {
-       return labelRepository.save(new Label(name));
+    public Label saveLabel(String name) {
+        return labelRepository.save(new Label(name));
     }
 
-    public Label findLabelById(int id) throws IOException {
+    public Label findLabelById(Integer id) {
         return labelRepository.getById(id);
     }
 
-
-    public void deleteLabel(int id) throws IOException {
+    public void deleteLabel(Integer id) {
         labelRepository.deleteById(id);
     }
 
-    public List<Label> getAllLabels() throws IOException {
+    public List<Label> getAllLabels() {
         return labelRepository.getAll();
     }
 
-    public Label findLabelByName(String name) throws IOException {
+    public Label findLabelByName(String name) {
         return labelRepository.findLabelByName(name);
     }
 
-    public Label updateLabel(int id, String name) throws IOException {
-        return labelRepository.update(new Label(id,name));
+    public Label updateLabel(Integer id, String name) {
+        return labelRepository.update(new Label(id, name));
     }
 
-    public List <Label> findOrCreateLabelsByString(String labels) throws IOException {
+    public List <Label> findOrCreateLabelsByString(String labels) {
         List<Label> resultLabels = new ArrayList<>();
         String[] labelsName = labels.split(" ");
         for (String lbl : labelsName) {

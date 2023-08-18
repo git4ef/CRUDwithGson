@@ -1,17 +1,17 @@
 [
   {
     "id": 1,
-    "name": "horror",
+    "name": "tag1",
     "status": "NOT_DELETED"
   },
   {
     "id": 2,
-    "name": "comedy",
+    "name": "tag2",
     "status": "NOT_DELETED"
   },
   {
     "id": 3,
-    "name": "action",
+    "name": "tag3",
     "status": "NOT_DELETED"
   }
 ]

@@ -1,7 +1,7 @@
 package ef.CRUDwithGson.model;
 
 public class Label {
-    private int id;
+    private Integer id;
     private String name;
     private Status status;
 

@@ -6,23 +6,23 @@
     "postList": [
       {
         "id": 1,
-        "content": "some movie",
-        "created": "Aug 15, 2023, 8:48:28 PM",
+        "content": "some post",
+        "created": "Aug 18, 2023, 3:46:57 PM",
         "updated": null,
         "labelList": [
           {
             "id": 1,
-            "name": "horror",
+            "name": "tag1",
             "status": "NOT_DELETED"
           },
           {
             "id": 2,
-            "name": "comedy",
+            "name": "tag2",
             "status": "NOT_DELETED"
           },
           {
             "id": 3,
-            "name": "action",
+            "name": "tag3",
             "status": "NOT_DELETED"
           }
         ],
